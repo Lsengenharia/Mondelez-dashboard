@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar Gráfico de Execução
     const ctx = document.getElementById('executionChart').getContext('2d');
     new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: ['Concluído', 'Em Andamento', 'Pendente'],
             datasets: [{
-                data: [75, 15, 10],
+                data: [100],
                 backgroundColor: ['#4caf50', '#ff9800', '#f44336'],
                 borderWidth: 1
             }]
