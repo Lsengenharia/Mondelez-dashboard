@@ -200,6 +200,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    border-radius: 30px;
 }
 
 button:hover {
@@ -240,4 +241,42 @@ footer {
     padding: 20px;
     color: #777;
     font-size: 0.9rem;
+}
+
+.pdf-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px 12px;
+}
+.save-pdf-button {
+    background: #1a237e;
+    padding: 11px 18px;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+    border-radius: 30px;
+}
+.save-pdf-button:hover{ 
+    background: #3949ab; 
+}
+
+.btn-save{
+    border-radius: 30px;
+}
+@media print {
+    @page { size: A4; margin: 12mm; }
+    body { background: #fff !important; color: #222; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pdf-toolbar, .video-box, video, button, input[type="time"] { display: none !important; }
+    .container-fluid, .container, main { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+    .container { padding: 8px !important; }
+    header { padding: 12px 0 !important; margin-bottom: 12px !important; }
+    .summary-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .dashboard-grid { grid-template-columns: 1.3fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .card, .chart-container, .info-panel, .gallery { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+    .chart-container, .info-panel, .gallery { padding: 14px; }
+    .photo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+    .photo-grid img { width: 100% !important; height: 105px !important; object-fit: cover; padding: 0 !important; border-radius: 4px !important; break-inside: avoid; }
+    textarea { height: auto; min-height: 65px; resize: none; }
+    footer { padding: 10px 0; }
 }
